@@ -1,5 +1,5 @@
 
-const addListItemAction = (newItem: any) => {
+const addListItemActionCreator = (newItem) => {
   return {
     type: 'ADD_LIST',
     data: newItem
@@ -7,5 +7,5 @@ const addListItemAction = (newItem: any) => {
 };
 
 export const Actions = {
-  addListItem: addListItemAction
+  addListItem: addListItemActionCreator
 };

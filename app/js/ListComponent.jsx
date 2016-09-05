@@ -13,18 +13,21 @@ const DisconnectedListComponent = React.createClass({
   render() {
     return (
       <ListGroup fill>
-        {this.props.list.map((value, index) =>
-            <ListGroupItem key={index}>
-              {value}
-            </ListGroupItem>
-        ).toArray()}
+        {
+          this.props.list.map(
+            (value, index) =>
+              <ListGroupItem key={index}>
+                {value}
+              </ListGroupItem>
+          ).toArray()
+        }
       </ListGroup>
     );
   }
 
 });
 
-export const ListComponent = connect(function(state: any) {
+export const ListComponent = connect(function(state) {
     return {
         list: state.list
     };

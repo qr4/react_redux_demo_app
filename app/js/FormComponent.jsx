@@ -7,43 +7,41 @@ import {Actions} from './Actions.js';
 const DisconnectedFormComponent = React.createClass({
 
   getInitialState() {
-    return {value: 0};
+    return {input: ''};
   },
 
-    onSubmit() {
-      this.props.dispatch(Actions.addListItem(this.state.value));
-      this.setState({value: 0});
-    },
+  onSubmit() {
+    const parsedInt = parseInt(this.state.input, 10);
+    if (!isNaN(parsedInt)) {
+      this.props.dispatch(Actions.addListItem(parsedInt));
+      this.setState({input: ''});
+    }
+  },
 
   onInputChange(e) {
-    const parsedInt = parseInt(e.target.value, 10);
-    if (!isNaN(parsedInt)) {
-      this.setState({
-        value: parseInt(e.target.value, 10)
-      });
-    }
+    this.setState({input: e.target.value});
   },
 
-    render() {
-      return (
-        <Panel>
-          <FormGroup>
-            <ControlLabel>Create new item</ControlLabel>
-            <FormControl
-              type="number"
-              value={this.state.value}
-              onChange={this.onInputChange}
-              placeholder={"Enter value"}
-            />
-          </FormGroup>
-          <Button
-            bsStyle="primary"
-            onClick={this.onSubmit}>
-              Add item
-          </Button>
-        </Panel>
-      )
-    }
+  render() {
+    return (
+      <Panel>
+        <FormGroup>
+          <ControlLabel>Create new item</ControlLabel>
+          <FormControl
+            type="number"
+            value={this.state.input}
+            onChange={this.onInputChange}
+            placeholder={"Enter value"}
+          />
+        </FormGroup>
+        <Button
+          bsStyle="primary"
+          onClick={this.onSubmit}>
+          Add item
+        </Button>
+      </Panel>
+    )
+  }
 });
 
 export const FormComponent = connect()(DisconnectedFormComponent);

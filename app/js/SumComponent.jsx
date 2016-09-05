@@ -20,7 +20,7 @@ const DisconnectedSumComponent = React.createClass({
 
 });
 
-export const SumComponent = connect(function(state: any) {
+export const SumComponent = connect(function(state) {
     return {
         list: state.list
     };

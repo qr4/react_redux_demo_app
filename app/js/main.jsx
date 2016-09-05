@@ -14,15 +14,15 @@ class Main extends React.Component{
   render() {
     return (
       <Provider store={store}>
-	<div>
-	<PageHeader>
-	React + Redux Demo
-	</PageHeader>
-	<ListComponent/>
-	<SumComponent />
-	<FormComponent />
-	</div>
-	</Provider>
+        <div>
+          <PageHeader>
+            React + Redux Demo
+          </PageHeader>
+          <ListComponent/>
+          <SumComponent />
+          <FormComponent />
+        </div>
+      </Provider>
     );
   }
 }
