@@ -7,14 +7,14 @@ import {ListGroupItem} from 'react-bootstrap';
 
 const DisconnectedSumComponent = React.createClass({
   propTypes: {
-    sum: React.PropTypes.number.isRequired
+    list: React.PropTypes.instanceOf(List).isRequired
   },
 
   render: function() {
     return (
       <p>
-        Sum: {this.props.sum}
-        </p>
+        Sum: {this.props.list.reduce((a, b) => a+b, 0)}
+      </p>
     )
   }
 
@@ -22,6 +22,6 @@ const DisconnectedSumComponent = React.createClass({
 
 export const SumComponent = connect(function(state: any) {
     return {
-        sum: state.sum
+        list: state.list
     };
 })(DisconnectedSumComponent);

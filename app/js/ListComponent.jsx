@@ -13,12 +13,12 @@ const DisconnectedListComponent = React.createClass({
   render() {
     return (
       <ListGroup fill>
-	{this.props.list.map((value, index) =>
-	  <ListGroupItem key={index}>
-	    {value}
-	    </ListGroupItem>
-	).toArray()}
-	</ListGroup>
+        {this.props.list.map((value, index) =>
+            <ListGroupItem key={index}>
+              {value}
+            </ListGroupItem>
+        ).toArray()}
+      </ListGroup>
     );
   }
 
