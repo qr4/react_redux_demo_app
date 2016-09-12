@@ -5,6 +5,8 @@ import {List} from 'immutable';
 const listReducer = (previousState = new List(), action) => {
   if (action.type === ActionTypes.addListItem) {
     return previousState.push(action.data);
+  } else if (action.type === ActionTypes.deleteListItem) {
+    return previousState.remove(action.data);
   } else {
     return previousState;
   }
