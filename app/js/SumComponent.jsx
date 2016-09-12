@@ -13,7 +13,7 @@ const DisconnectedSumComponent = React.createClass({
   render: function() {
     return (
       <p>
-        Sum: {this.props.list.reduce((a, b) => a+b, 0)}
+        Sum: {this.props.list.reduce((a, b) => a + b, 0)}
       </p>
     )
   }
