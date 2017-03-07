@@ -11,6 +11,7 @@ export class DisconnectedListComponent extends Component {
 
     constructor() {
         super();
+        (this: any)._deleteJoke = this._deleteJoke.bind(this);
     }
 
     _deleteJoke(position: number) {
