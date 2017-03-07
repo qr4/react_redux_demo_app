@@ -1,0 +1,33 @@
+exports[`RequestJokeComponent [snapshot] it renders correctly 1`] = `
+<Panel
+  bsClass="panel"
+  bsStyle="default"
+  defaultExpanded={false}>
+  <FormGroup
+    bsClass="form-group">
+    <ControlLabel
+      bsClass="control-label"
+      srOnly={false}>
+      Request more Jokes!
+    </ControlLabel>
+    <FormControl
+      bsClass="form-control"
+      className="form-control-test"
+      componentClass="input"
+      onChange={[Function]}
+      placeholder="Enter id"
+      type="number"
+      value="" />
+  </FormGroup>
+  <Button
+    active={false}
+    block={false}
+    bsClass="btn"
+    bsStyle="primary"
+    className="test-submit-button"
+    disabled={false}
+    onClick={[Function]}>
+    Request joke with this id
+  </Button>
+</Panel>
+`;

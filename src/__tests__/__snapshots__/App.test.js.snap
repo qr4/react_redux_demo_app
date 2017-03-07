@@ -1,0 +1,11 @@
+exports[`App [snapshot] it renders correctly 1`] = `
+<div>
+  <PageHeader
+    bsClass="page-header">
+    React + Redux Demo
+  </PageHeader>
+  <Connect(DisconnectedListComponent) />
+  <Connect(DisconnectedSumComponent) />
+  <Connect(DisconnectedRequestJokeComponent) />
+</div>
+`;

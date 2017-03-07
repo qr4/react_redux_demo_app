@@ -1,0 +1,5 @@
+exports[`ListComponent [snapshot] it renders correctly 1`] = `
+<ListGroup
+  bsClass="list-group"
+  fill={true} />
+`;
