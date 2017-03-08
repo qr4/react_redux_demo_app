@@ -1,22 +1,12 @@
 // @flow
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
-import { ListGroup, ListGroupItem, Button } from 'react-bootstrap';
+import { ListGroup, ListGroupItem } from 'react-bootstrap';
 
 import type { StoreType } from '../state/StoreProvider';
 import { Jokes } from "../business/Jokes";
-import { Actions } from "../state/Actions";
 
-export class DisconnectedListComponent extends Component {
-
-    constructor() {
-        super();
-        (this: any)._deleteJoke = this._deleteJoke.bind(this);
-    }
-
-    _deleteJoke(position: number) {
-        this.props.deleteJoke(position);
-    }
+export class DisconnectedListComponent extends React.Component {
 
     render() {
         return (
@@ -26,7 +16,6 @@ export class DisconnectedListComponent extends Component {
                         return (
                             <ListGroupItem key={'joke-' + index} className={'clearfix list-group-item-test-' + index}>
                                 {value}
-                                <Button bsSize="sm" className="pull-right" onClick={() => this._deleteJoke(index)}>Delete Joke!</Button>
                             </ListGroupItem>
                         )
                     }).toArray()
@@ -38,9 +27,7 @@ export class DisconnectedListComponent extends Component {
 
 DisconnectedListComponent.propTypes = {
     // injected through redux
-    jokes: React.PropTypes.instanceOf(Jokes).isRequired,
-
-    deleteJoke: React.PropTypes.func.isRequired
+    jokes: React.PropTypes.instanceOf(Jokes).isRequired
 };
 
 const mapStateToProps = (state: StoreType) => {
@@ -49,12 +36,5 @@ const mapStateToProps = (state: StoreType) => {
     };
 };
 
-const mapDispatchToProps = (dispatch: any) => {
-    return {
-        deleteJoke: (position) => dispatch(Actions.deleteJoke(position))
-
-    };
-};
-
-export const ListComponent = connect(mapStateToProps, mapDispatchToProps)(DisconnectedListComponent);
+export const ListComponent = connect(mapStateToProps)(DisconnectedListComponent);
 

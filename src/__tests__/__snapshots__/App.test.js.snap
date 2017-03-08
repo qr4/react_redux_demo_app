@@ -1,9 +1,6 @@
 exports[`App [snapshot] it renders correctly 1`] = `
 <div>
-  <PageHeader
-    bsClass="page-header">
-    React + Redux Demo
-  </PageHeader>
+  <HeaderComponent />
   <Connect(DisconnectedListComponent) />
   <Connect(DisconnectedSumComponent) />
   <Connect(DisconnectedRequestJokeComponent) />

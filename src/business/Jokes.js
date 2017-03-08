@@ -12,10 +12,6 @@ export class Jokes {
         return new Jokes(this._listOfJokes.push(joke));
     }
 
-    removeJokeAtPosition(index: number): Jokes {
-        return new Jokes(this._listOfJokes.delete(index));
-    }
-
     getJokes(): List<string> {
         return this._listOfJokes;
     }

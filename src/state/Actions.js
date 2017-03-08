@@ -15,13 +15,6 @@ const addNewJokeActionCreator = (id: number, joke: string) => {
     };
 };
 
-const deleteJokeActionCreator = (index: number) => {
-    return {
-        type: ActionTypes.DELETE_JOKE,
-        data: index
-    };
-};
-
 function requestJokeActionCreator(jokeId: number) {
     return (dispatch: any, getState: any) => {
         fetch('http://api.icndb.com/jokes/' + jokeId, { method: 'GET' }).then(
@@ -40,7 +33,6 @@ function requestJokeActionCreator(jokeId: number) {
 
 export const Actions = {
     addJoke: addNewJokeActionCreator,
-    deleteJoke: deleteJokeActionCreator,
 
     // async actions
     requestJoke: requestJokeActionCreator

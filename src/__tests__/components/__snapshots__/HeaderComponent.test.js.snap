@@ -1,0 +1,6 @@
+exports[`HeaderComponent [snapshot] it renders correctly 1`] = `
+<PageHeader
+  bsClass="page-header">
+  React + Redux Demo
+</PageHeader>
+`;
