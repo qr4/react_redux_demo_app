@@ -5,3 +5,9 @@
   - Type yarn start to start a local webserver hosting your app.
   - Type yarn test to start a test watcher.
   - Type test-coverage to run the tests with coverage.
+
+- Resources:
+  - React boostratpping with jest: https://github.com/facebookincubator/create-react-app
+  - jest: https://facebook.github.io/jest/
+  - enzyme: http://airbnb.io/enzyme/
+  - redux: http://redux.js.org/docs/introduction/
