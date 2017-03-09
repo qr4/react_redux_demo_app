@@ -15,4 +15,11 @@ export class Jokes {
     getJokes(): List<string> {
         return this._listOfJokes;
     }
+
+    removeJokeAtPosition(position: number) {
+        if (position < 0) {
+            return this;
+        }
+        return new Jokes(this._listOfJokes.delete(position));
+    }
 }
