@@ -1,10 +1,12 @@
 [ignore]
-.*/build/.*
-.*/coverage/.*
+
+[include]
 
 [libs]
+flow-typed/
+
+[lints]
 
 [options]
-module.system=node
-esproposal.class_instance_fields=enable
-esproposal.class_static_fields=enable
+
+[strict]

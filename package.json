@@ -3,48 +3,45 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "bootstrap": "^3.3.7",
-    "immutable": "^3.8.1",
-    "react": "^15.4.2",
-    "react-bootstrap": "^0.30.7",
-    "react-dom": "^15.4.2",
-    "react-redux": "^5.0.3",
-    "redux": "^3.6.0",
-    "redux-devtools-extension": "^2.13.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.7",
+    "react-scripts": "1.1.1",
+    "redux": "^3.7.2",
     "redux-thunk": "^2.2.0"
-  },
-  "devDependencies": {
-    "enzyme": "^2.7.1",
-    "enzyme-to-json": "^1.5.0",
-    "flow-bin": "^0.41.0",
-    "meta-constant": "^0.3.1",
-    "react-addons-test-utils": "^15.4.2",
-    "react-scripts": "0.9.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom --watch",
-    "test-coverage": "react-scripts test --env=jsdom --coverage",
-    "eject": "react-scripts eject"
+    "test": "react-scripts test --env=jsdom",
+    "flow": "flow --quiet",
+    "eslint": "eslint --cache --cache-location 'misc/.eslintcache' src/",
+    "prettier": "prettier --config .prettierrc --write 'src/**/*.js'"
+  },
+  "devDependencies": {
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-flowtype": "^2.45.0",
+    "eslint-plugin-prettier": "^2.6.0",
+    "flow-bin": "^0.66.0",
+    "prettier": "^1.10.2"
   },
   "jest": {
-    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/js/**/*.{js}"
+    ],
     "coverageReporters": [
-      "text",
       "lcov",
       "cobertura"
     ],
-    "collectCoverageFrom": [
-      "src/**/*.{js, jsx}"
-    ]
-  },
-  "babel": {
-    "presets": [
-      "react-app"
-    ]
-  },
-  "eslintConfig": {
-    "extends": "react-app"
+    "coverageThreshold": {
+      "global": {
+        "statements": 80,
+        "branches": 70,
+        "functions": 80,
+        "lines": 80
+      }
+    }
   }
 }

@@ -1,7 +1,0 @@
-exports[`SumComponent [snapshot] it renders correctly 1`] = `
-<Well
-  bsClass="well"
-  className="test-class-sum">
-  Sum of all characters: 0
-</Well>
-`;
