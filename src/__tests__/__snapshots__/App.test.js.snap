@@ -1,8 +1,0 @@
-exports[`App [snapshot] it renders correctly 1`] = `
-<div>
-  <HeaderComponent />
-  <Connect(DisconnectedListComponent) />
-  <Connect(DisconnectedSumComponent) />
-  <Connect(DisconnectedRequestJokeComponent) />
-</div>
-`;
