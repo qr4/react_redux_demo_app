@@ -12,3 +12,4 @@
   - enzyme: http://airbnb.io/enzyme/
   - redux: http://redux.js.org/docs/introduction/
   - equality in js: https://dorey.github.io/JavaScript-Equality-Table/
+  - render cycle in modern react: https://gist.github.com/cberio/d6b777d9a43eb272cb72f4c48d326d68
