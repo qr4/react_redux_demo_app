@@ -11,3 +11,4 @@
   - jest: https://facebook.github.io/jest/
   - enzyme: http://airbnb.io/enzyme/
   - redux: http://redux.js.org/docs/introduction/
+  - equality in js: https://dorey.github.io/JavaScript-Equality-Table/
