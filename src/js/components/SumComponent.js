@@ -5,11 +5,16 @@ import { connect } from 'react-redux';
 
 import type { State } from '../state/Reducer';
 import { Jokes } from '../business/Jokes';
+import { Well } from 'react-bootstrap';
 
-export class DisconnectedSumComponent extends Component<{ jokes: Jokes }> {
+type Props = {
+    jokes: Jokes,
+};
+
+export class DisconnectedSumComponent extends Component<Props> {
     render() {
         const sum = this.props.jokes.listOfJokes.reduce((red: number, elem: string) => red + elem.length, 0);
-        return <div className="well test-class-sum">{'Sum of all characters: ' + sum}</div>;
+        return <Well className="test-class-sum"> {'Sum of all characters: ' + sum} </Well>;
     }
 }
 

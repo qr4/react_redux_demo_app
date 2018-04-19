@@ -7,9 +7,13 @@ import { DisconnectedListComponent } from './ListComponent';
 import { Jokes } from '../business/Jokes';
 
 describe('ListComponent', () => {
-    const renderComponentSanely = (jokes = new Jokes(), deleteJoke = jest.fn()) => (
-        <DisconnectedListComponent jokes={jokes} deleteJoke={deleteJoke} />
-    );
+    function renderComponentSanely(props = {}) {
+        const defaultProps = {
+            jokes: new Jokes(),
+        };
+
+        return <DisconnectedListComponent {...defaultProps} {...props} />;
+    }
 
     it('[snapshot] it renders correctly', () => {
         const app = shallow(renderComponentSanely());
@@ -18,21 +22,9 @@ describe('ListComponent', () => {
 
     it('renders a list group item per joke', () => {
         const jokes = new Jokes().addNewJoke('this is a totally awesome joke!');
-        const app = shallow(renderComponentSanely(jokes));
+        const app = shallow(renderComponentSanely({ jokes: jokes }));
 
         const element = app.find('.list-group-item-test-0');
         expect(element.contains('this is a totally awesome joke!')).toBe(true);
-    });
-
-    it('calls remove handler with correct index', () => {
-        const jokes = new Jokes().addNewJoke('this is a totally awesome joke!').addNewJoke('this is a so-so joke');
-        const spy = jest.fn();
-        const app = shallow(renderComponentSanely(jokes, spy));
-
-        const button = app.find('.list-group-item-test-1').find('button');
-
-        button.simulate('click', { button: 0 });
-
-        expect(spy).toHaveBeenCalledWith(1);
     });
 });

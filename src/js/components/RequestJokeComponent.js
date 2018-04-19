@@ -4,14 +4,13 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Actions } from '../state/Actions';
 import type { Dispatch } from 'redux';
+import { Button, ControlLabel, Form, FormControl, FormGroup } from 'react-bootstrap';
 
-type RequestJokeComponentState = { input: string };
+type State = { input: string };
+type Props = { requestJoke: number => void };
 
-export class DisconnectedRequestJokeComponent extends Component<
-    { requestJoke: number => void },
-    RequestJokeComponentState
-> {
-    state = { input: '' };
+export class DisconnectedRequestJokeComponent extends Component<Props, State> {
+    state: State = { input: '' };
 
     _onInputChange = (e: SyntheticInputEvent<*>) => {
         this.setState({
@@ -30,20 +29,22 @@ export class DisconnectedRequestJokeComponent extends Component<
 
     render() {
         return (
-            <form onSubmit={this._onSubmit}>
-                <div className="form-group">
-                    <label className="control-label">Request more Jokes!</label>
-                    <input
+            <Form onSubmit={this._onSubmit}>
+                <FormGroup>
+                    <ControlLabel>Request more Jokes!</ControlLabel>
+                    <FormControl
                         type="number"
-                        className="form-control"
+                        className="form-control-test"
                         value={this.state.input}
                         onChange={this._onInputChange}
                         placeholder="Enter id..."
                     />
-                </div>
+                </FormGroup>
 
-                <button className="btn btn-primary">Request joke with this id</button>
-            </form>
+                <Button bsStyle="primary" type="submit">
+                    Request joke with this id
+                </Button>
+            </Form>
         );
     }
 }

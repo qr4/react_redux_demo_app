@@ -21,10 +21,4 @@ describe('jokesReducer', () => {
         expect(newState.listOfJokes.length).toBe(1);
         expect(newState.listOfJokes[0]).toBe('jooooooke');
     });
-
-    it('removes jokes on action', () => {
-        const newState = jokesReducer(new Jokes().addNewJoke('foo'), Actions.deleteJoke(0));
-
-        expect(newState.listOfJokes.length).toBe(0);
-    });
 });

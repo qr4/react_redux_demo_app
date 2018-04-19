@@ -7,9 +7,8 @@ import { Provider } from 'react-redux';
 import { store } from './js/state/StoreProvider';
 import { App } from './js/App';
 
-import './styles/css/bootstrap.min.css';
-import './styles/css/bootstrap-grid.min.css';
-import './styles/css/fontawesome-all.min.css';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap-theme.css';
 
 const root = document.getElementById('root');
 
