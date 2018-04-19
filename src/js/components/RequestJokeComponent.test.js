@@ -16,7 +16,7 @@ describe('RequestJokeComponent', () => {
         const preventDefaultSpy = jest.fn();
         const form = shallow(<DisconnectedRequestJokeComponent requestJoke={spy} />);
 
-        const formControl = form.find('.form-control');
+        const formControl = form.find('FormControl');
 
         // simulate the input change
         formControl.simulate('change', { target: { value: '123' } });
@@ -31,7 +31,7 @@ describe('RequestJokeComponent', () => {
         const spy = jest.fn();
         const form = shallow(<DisconnectedRequestJokeComponent requestJoke={spy} />);
 
-        const formControl = form.find('.form-control');
+        const formControl = form.find('FormControl');
 
         // simulate the input change
         formControl.simulate('change', { target: { value: 'NOT_A_NUMBER' } });

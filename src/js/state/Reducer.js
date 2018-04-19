@@ -9,8 +9,6 @@ export function jokesReducer(previousState: Jokes = new Jokes(), action: Action)
     switch (action.type) {
         case 'ADD_NEW_JOKE':
             return previousState.addNewJoke(action.data.joke);
-        case 'DELETE_JOKE':
-            return previousState.removeJokeAtPosition(action.payload);
         default:
             return previousState;
     }

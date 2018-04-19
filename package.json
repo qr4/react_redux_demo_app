@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "bootstrap": "3",
     "react": "^16.2.0",
+    "react-bootstrap": "^0.32.1",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.7",
     "react-scripts": "1.1.1",
@@ -14,13 +16,15 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
+    "coverage": "react-scripts test --env=jsdom --coverage",
     "flow": "flow --quiet",
-    "eslint": "eslint --cache --cache-location 'misc/.eslintcache' src/",
+    "eslint": "node_modules/eslint/bin/eslint --cache --cache-location 'misc/.eslintcache' src/",
     "prettier": "prettier --config .prettierrc --write 'src/**/*.js'"
   },
   "devDependencies": {
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.3.3",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-flowtype": "^2.45.0",
     "eslint-plugin-prettier": "^2.6.0",
@@ -42,6 +46,9 @@
         "functions": 80,
         "lines": 80
       }
-    }
+    },
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
   }
 }

@@ -1,5 +1,6 @@
 // @flow
 
 import React from 'react';
+import { PageHeader } from 'react-bootstrap';
 
-export const HeaderComponent = () => <header>React + Redux Demo</header>;
+export const HeaderComponent = () => <PageHeader>React + Redux Demo</PageHeader>;

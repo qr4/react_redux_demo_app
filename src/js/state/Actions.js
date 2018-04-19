@@ -2,9 +2,7 @@
 
 import type { Dispatch } from 'redux';
 
-export type Action =
-    | { type: 'ADD_NEW_JOKE', data: { id: number, joke: string } }
-    | { type: 'DELETE_JOKE', payload: number };
+export type Action = { type: 'ADD_NEW_JOKE', data: { id: number, joke: string } };
 
 const addJoke = (id: number, joke: string): Action => {
     return {
@@ -13,13 +11,6 @@ const addJoke = (id: number, joke: string): Action => {
             id,
             joke,
         },
-    };
-};
-
-const deleteJoke = (position: number): Action => {
-    return {
-        type: 'DELETE_JOKE',
-        payload: position,
     };
 };
 
@@ -36,8 +27,8 @@ const requestJoke = (jokeId: number) => {
 };
 
 export const Actions = {
+    // sync actions
     addJoke,
-    deleteJoke,
 
     // async actions
     requestJoke,
